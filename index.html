@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Surprise 💖</title>
+  <style>
+    body {
+      background-color: #ffccff; /* Pink background */
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 50px;
+      color: white;
+      overflow: hidden;
+      cursor: pointer; /* Make the cursor look clickable */
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .heart {
+      font-size: 2rem;
+      color: #ff6699;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .message {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      50% { transform: translateY(-30px); opacity: 0.7; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .heart-container {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+
+    .heart-container span {
+      position: absolute;
+      animation: hearts 6s ease-in-out infinite;
+    }
+
+    .heart-container span:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .heart-container span:nth-child(2) {
+      animation-delay: 1s;
+    }
+
+    .heart-container span:nth-child(3) {
+      animation-delay: 2s;
+    }
+
+    .heart-container span:nth-child(4) {
+      animation-delay: 3s;
+    }
+
+    .heart-container span:nth-child(5) {
+      animation-delay: 4s;
+    }
+
+    @keyframes hearts {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-200px); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="heart-container">
+    <span class="heart">💖</span>
+    <span class="heart">💖</span>
+    <span class="heart">💖</span>
+    <span class="heart">💖</span>
+    <span class="heart">💖</span>
+  </div>
+
+  <h1>Surprise, My Love!</h1>
+
+  <div class="message">
+    <p id="msg1">You are my heart, my joy, my everything. 💕</p>
+    <p id="msg2">Every moment with you feels like a dream come true. 💖</p>
+    <p id="msg3">I love you more than words can say. 💝</p>
+  </div>
+
+  <script>
+    // Wait for the user to click on the page
+    document.body.addEventListener('click', function() {
+      // Reveal the hidden message
+      const message = document.querySelector('.message');
+      message.style.opacity = 1;
+
+      // Animate hearts floating after the click
+      const hearts = document.querySelectorAll('.heart');
+      hearts.forEach(heart => {
+        heart.style.animation = 'float 3s ease-in-out infinite';
+      });
+
+      // Change the text content to a more personal message
+      document.getElementById('msg1').innerText = "You're the love of my life!";
+      document.getElementById('msg2').innerText = "Every moment with you is a gift. 💖";
+      document.getElementById('msg3').innerText = "You're my forever and always! 💕";
+    });
+  </script>
+</body>
+</html>
